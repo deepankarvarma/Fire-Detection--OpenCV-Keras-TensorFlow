@@ -32,8 +32,8 @@ while True:
     # Print the prediction score for debugging purposes
     print(f"Prediction score: {prediction}")
 
-    # If the prediction is greater than a threshold value (e.g. 0.5), find the location of the fire and draw a rectangle around it
-    if prediction > 0.5:
+    # If the prediction is greater than a threshold value (e.g. 0.1), find the location of the fire and draw a rectangle around it
+    if prediction > 0.1:
         # Convert the input image to grayscale
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
