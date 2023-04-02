@@ -22,7 +22,7 @@ val_data_gen = ImageDataGenerator(rescale=1./255)
 # Load the images and labels from the data folder
 x = []
 y = []
-for label, folder_name in enumerate(['fire_images', 'non_fire_images']):
+for label, folder_name in enumerate(['non_fire_images', 'fire_images']):
     folder_path = os.path.join(data_dir, folder_name)
     for img_name in os.listdir(folder_path):
         img_path = os.path.join(folder_path, img_name)
@@ -60,7 +60,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 # Train the model
 history = model.fit(train_data_gen.flow(x_train, y_train, batch_size=batch_size),
                     validation_data=val_data_gen.flow(x_val, y_val),
-                    epochs=4, verbose=1)
+                    epochs=15, verbose=1)
 
 # Save the model
 model.save('fire_detection_model.h5')

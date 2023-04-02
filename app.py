@@ -32,8 +32,8 @@ def app():
 
         # Make a prediction
         pred = model.predict(img)
-        pred_label = 'Fire Present' if pred[0][0] < 0.5 else 'No Fire'
-        pred_prob = 1-pred[0][0]
+        pred_label = 'Fire Present' if pred[0][0] > 0.5 else 'No Fire'
+        pred_prob = pred[0][0]
         
         # Show the prediction result
         st.write(f'Prediction: {pred_label}')
