@@ -19,6 +19,7 @@ batch_size = 32
 train_data_gen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 val_data_gen = ImageDataGenerator(rescale=1./255)
 
+# 0 means non_fire and vice-versa
 # Load the images and labels from the data folder
 x = []
 y = []
